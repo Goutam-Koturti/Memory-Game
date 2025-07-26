@@ -1,0 +1,70 @@
+.rules-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background: rgba(15, 30, 40, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.rules-title {
+  font-size: 1.5rem;
+  color: #ffe600;
+  margin-bottom: 20px;
+  letter-spacing: 1.5px;
+  text-shadow: 2px 2px 5px #000;
+}
+
+.rules-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  color: #e0f7fa;
+  line-height: 1.8;
+  font-size: 0.95rem;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rules-list li::before {
+  content: "🎮 ";
+  color: #00ffc8;
+}
+
+.rules-btn {
+  background-color: #00ffc8;
+  color: #000;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.75rem;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 255, 200, 0.4);
+}
+
+.rules-btn:hover {
+  background-color: #0ff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .rules-title {
+    font-size: 1.1rem;
+  }
+
+  .rules-list {
+    font-size: 0.8rem;
+  }
+
+  .rules-btn {
+    font-size: 0.65rem;
+    padding: 10px 16px;
+  }
+}

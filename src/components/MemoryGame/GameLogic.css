@@ -1,0 +1,142 @@
+.centerGrid {
+  display: flex;
+  justify-content: center;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Card Item Style */
+.card-item {
+  width: 70px;
+  height: 70px;
+  background-color: #1e2a33;
+  color: transparent;
+  border: 2px solid #bf00ff; /* Purple border */
+  border-radius: 12px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(191, 0, 255, 0.4); /* Purple glow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.card-item:hover {
+  transform: scale(1.05);
+  background-color: #2a3b4a; /* Brighter on hover */
+}
+
+/* When card is flipped or revealed */
+.card-item.revealed {
+  color: #ffa726; /* Bright orange text */
+  background-color: #0f1e28;
+}
+
+/* Matched (solved) cards */
+.card-item.solved {
+  background-color: #bf00ff; /* Purple background */
+  color: #fff;
+  position: relative;
+  font-size: 1.2rem;
+  box-shadow: 0 0 15px rgba(191, 0, 255, 0.6);
+}
+
+.new-game-btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  font-size: 0.8rem;
+  font-family: "Press Start 2P", cursive;
+  border: none;
+  border-radius: 10px;
+  background-color: #ffe600;
+  color: #000;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 230, 0, 0.5);
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+}
+
+.new-game-btn:hover {
+  background-color: #ff0;
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(255, 255, 0, 0.6);
+}
+
+.back-button {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.6rem;
+  padding: 10px 16px;
+  background-color: #ff4081;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(255, 64, 129, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 3;
+}
+
+.back-button:hover {
+  background-color: #ff80ab;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(255, 64, 129, 0.6);
+}
+
+/* Tick mark overlay for solved */
+
+/* Responsive: 4x9 grid on smaller screens */
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: repeat(4, 1fr);
+    padding: 10px;
+  }
+
+  .card-item {
+    font-size: 0.7rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .card-item.solved {
+    font-size: 1rem;
+  }
+
+  .card-item.solved::after {
+    font-size: 0.8rem;
+    top: 4px;
+    right: 6px;
+  }
+}
+
+/* Win message */
+.win-message {
+  margin-top: 30px;
+  font-size: 1.2rem;
+  color: #ffe600; /* Yellow glow */
+  font-family: "Press Start 2P", cursive;
+  text-shadow: 1px 1px 8px #ffe600;
+  animation: pulseWin 1.2s ease-in-out infinite;
+}
+
+/* Pulse animation */
+@keyframes pulseWin {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
